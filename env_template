@@ -1,0 +1,45 @@
+
+#Binance credetials
+# https://library.tradingtechnologies.com/user-setup/bi-creating-a-binance-api-key.html#:~:text=Log%20in%20to%20https%3A%2F%2F,Key%20and%20Secret%20Key%20appears.
+BINANCE_API_KEY= #your binance API key
+BINANCE_API_SECRET= #your binance Secret Key
+
+#postgres credentials
+
+POSTGRES_USER=#postgresusername
+POSTGRES_PASSWORD=#postgrespwd
+
+#Postgres connection string
+CON_STRING = 'postgresql+psycopg2://admin:postgres@postgresdb:5432/postgres'
+
+
+
+#pg admin creds
+PGADMIN_DEFAULT_EMAIL=#pgadminemailaddress
+PGADMIN_DEFAULT_PASSWORD=#pgadminpwd
+
+AIRFLOW_UID=501
+AIRFLOW_GID=0
+
+
+# Meta-Database
+POSTGRES_USER=#airflowpostgresusername
+POSTGRES_PASSWORD=#airflowpostgrespwd
+POSTGRES_DB=#dbname
+
+# Airflow Core
+AIRFLOW__CORE__FERNET_KEY= UKMzEm3yIuFYEq1y3-2FxPNWSVwRASpahmQ9kQfEr8E=
+AIRFLOW__CORE__EXECUTOR=LocalExecutor
+AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION=True
+AIRFLOW__CORE__LOAD_EXAMPLES=False
+AIRFLOW_UID=0
+
+# Backend DB
+AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres/airflow
+AIRFLOW__DATABASE__LOAD_DEFAULT_CONNECTIONS=False
+
+# Airflow Init
+_AIRFLOW_DB_UPGRADE=True
+_AIRFLOW_WWW_USER_CREATE=True
+_AIRFLOW_WWW_USER_USERNAME=airflow
+_AIRFLOW_WWW_USER_PASSWORD=airflow

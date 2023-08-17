@@ -1,0 +1,40 @@
+version: '3'   
+services:
+  postgresdb:
+    image: postgres
+    container_name: postgres-db
+    networks: 
+      - postgres
+    ports:
+      - 5432:5432 
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    volumes:
+      - postgresdb:/var/lib/postgresql/data
+
+  pgadminnew:
+    image: dpage/pgadmin4
+    container_name: pgadmind4-crypto
+    networks:  # we add network
+      - postgres
+    ports: 
+      - 80:80
+    env_file: .env
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=${PGADMIN_DEFAULT_EMAIL}
+      - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_DEFAULT_PASSWORD}
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    depends_on:
+      - postgresdb
+
+volumes:
+  postgresdb:
+  pgadmin-data:
+
+networks:
+  postgres:
+    driver: bridge
+    name: postgres_network
+ 
