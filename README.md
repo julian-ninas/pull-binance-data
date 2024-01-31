@@ -3,7 +3,8 @@ This is a project to pull and update historical cryptocurrency data from binance
 It consists of a dockerized airflow application and an sql database.
 
 It pulls data from 45 different cryptocurrencies.
-There is a cron job that updates the data every five minutes and the prices are reported at five-minute intervals. 
+There is a cron job that updates the data every five minutes 
+and the prices are reported at five-minute intervals. 
 
 # Prerequisities
 * You need to have docker installed
